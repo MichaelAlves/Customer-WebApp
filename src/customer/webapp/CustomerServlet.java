@@ -77,16 +77,16 @@ public class CustomerServlet extends HttpServlet {
 			String sqlOperation = request.getQueryString().trim();
 			
 			if (sqlOperation.equals("update")) {
-                // add the product id onto the model and update the product
+                //update the customer table
                 custRepo.updateCustomer(cust);
 			}
 			if (sqlOperation.equals("create")) {
-                //create the product
+                //create the customer
                 cust.setID(custRepo.createCustomer(cust));
                 response.getWriter().write(g.toJson(cust));
 			}
         	if (sqlOperation.equals("delete")) {
-                // delete the product
+                // delete the customer
                 custRepo.deleteCustomer(cust);
         	}
 		}
