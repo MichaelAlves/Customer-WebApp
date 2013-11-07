@@ -24,7 +24,8 @@
 				<kendo:dataSource-schema-model id="id"></kendo:dataSource-schema-model>
 			</kendo:dataSource-schema>
 		</kendo:dataSource>
-		<kendo:grid-columns>   				<kendo:grid-column title="First name" field="firstName" width ="150"></kendo:grid-column>
+		<kendo:grid-columns> 
+		<kendo:grid-column title="First name" field="firstName" width ="150"></kendo:grid-column>
 			<kendo:grid-column title="Last name" field="lastName" width="150"></kendo:grid-column>
 			<kendo:grid-column title="Address" field="address"></kendo:grid-column>
 			<kendo:grid-column title="City" field="city">
@@ -45,7 +46,7 @@
 	    			</kendo:grid-column-filterable-ui>
 	    		</kendo:grid-column-filterable>
 	    	</kendo:grid-column>
-			<kendo:grid-column title="State" field="state"></kendo:grid-column>
+			<kendo:grid-column title="State" field="state">
 				<kendo:grid-column-filterable>
 	    			<kendo:grid-column-filterable-ui>
     					<script> 
@@ -62,6 +63,7 @@
 					  	</script>
 	    			</kendo:grid-column-filterable-ui>
 	    		</kendo:grid-column-filterable>
+	    	</kendo:grid-column>
 			<kendo:grid-column title="Phone" field="phoneNumber"></kendo:grid-column>
 			<kendo:grid-column>
 				<kendo:grid-column-command>

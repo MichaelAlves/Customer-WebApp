@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 /**
  * Servlet implementation class States
  */
-@WebServlet("customer.webapp/States")
+@WebServlet("/customer.webapp/States")
 public class States extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CustomerDB custRepo;

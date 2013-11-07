@@ -1,7 +1,8 @@
 package customer.webapp;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 //Data source object to pass to parse remote service response
 public class CustomerDataSourceResult {
 	private int Total;
@@ -19,16 +20,16 @@ public class CustomerDataSourceResult {
 		return Data;
 	}
 	
-	public List<String> getCities(){
-		List<String> cities = new ArrayList<String>();
+	public Set<String> getCities(){
+		Set<String> cities = new HashSet<String>();
 		for(Customer person: this.Data){
 			cities.add(person.getCity());
 		}
 		return cities;
 	}
 	
-	public List<String> getStates(){
-		List<String> states = new ArrayList<String>();
+	public Set<String> getStates(){
+		Set<String> states = new HashSet<String>();
 		for(Customer person: this.Data){
 			states.add(person.getState());
 		}
@@ -39,7 +40,5 @@ public class CustomerDataSourceResult {
 	public void setData(List<Customer> data) {
 		this.Data = data;
 	}
-
-	
 
 }

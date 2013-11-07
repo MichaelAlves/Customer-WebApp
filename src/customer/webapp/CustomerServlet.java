@@ -77,7 +77,7 @@ public class CustomerServlet extends HttpServlet {
 			String sqlOperation = request.getQueryString().trim();
 			
 			if (sqlOperation.equals("update")) {
-                //update the customer table
+                // add the customer id and update the customer
                 custRepo.updateCustomer(cust);
 			}
 			if (sqlOperation.equals("create")) {
