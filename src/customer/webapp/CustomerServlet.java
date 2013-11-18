@@ -70,7 +70,7 @@ public class CustomerServlet extends HttpServlet {
 		try{
 			
 			
-			int cust_id = request.getParameter("id") == "" ? 0 : Integer.parseInt(request.getParameter("id"));
+			int cust_id = request.getParameter("id").equals("") ? 0 : Integer.parseInt(request.getParameter("id"));
 			Customer cust = parseNewCustomer(request, cust_id);
 			
 			//get CRUD request

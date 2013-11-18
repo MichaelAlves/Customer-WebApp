@@ -53,5 +53,5 @@ public class Customer {
 	public void setState(String state) {
 		this.state = state;
 	}	
-
+	
 }
