@@ -101,7 +101,11 @@
 	        
 	        categoryAxis: {
 	            field: "month"
-	        }
+	        },
+	        tooltip: {
+		    visible: true,
+                    template: "#= value # kWh"
+		}
 	    });
 	}
 	$(document).ready(function (){;
