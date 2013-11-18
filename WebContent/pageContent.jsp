@@ -7,109 +7,109 @@
 
     
 <shared:header></shared:header>
-										<script>
-												function exportPDF(e){
-													document.location.href='customer.webapp/PDF_File';
-												}
-										
-		        								function exportExcel(e){
-													document.location.href='customer.webapp/ExcelFile'; //servlet url
-												}      						
-		        			
-												
-                                				function createChart(e){
-                                					
-                                					var tr = $(e.target).closest("tr"); // get the current table row (tr)
-                                			          
-                                			        var data = this.dataItem(tr);	// get the data bound to the current table row
-                                			        var servname = data.firstName + " " + data.lastName;
-                                			      
-                                					var energyData = [{
-                                						"month":"January",
-                                						"kWh" : Math.floor(Math.random() * (700-300)) + 300
-                                					},
-                                					{
-                                						"month": "February",
-                                						"kWh" : Math.floor(Math.random() * (700-300)) + 300
-                                					},
-                                					{
-                                						"month": "March",
-                                						"kWh": Math.floor(Math.random() * (700-300)) + 300
-                                					},
-                                					{
-                                						"month": "April", 
-                                						"kWh": Math.floor(Math.random() * (700-300)) + 300
-                                					},
-                                					{
-                                						"month": "May",
-                                						"kWh": Math.floor(Math.random() * (700-300)) + 300
-                                					}, 
-                                					{
-                                						"month": "June", 
-                                						"kWh": Math.floor(Math.random() * (700-300)) + 300
-                                					},
-                                					{
-                                						"month": "July",
-                                						"kWh": Math.floor(Math.random() * (700-300)) + 300
-                                					},
-                                					{
-                                						"month": "August",
-                                						"kWh": Math.floor(Math.random() * (700-300)) + 300
-                                					},
-                                					{
-                                						"month": "September",
-                                						"kWh": Math.floor(Math.random() * (700-300)) + 300
-                                					},
-                                					{
-                                						"month":"October", 
-                                						"kWh": Math.floor(Math.random() * (700-300)) + 300
-                                					},
-                                					{
-                                						"month":"November",
-                                						"kWh": Math.floor(Math.random() * (700-300)) + 300
-                                					}];
-                                					
-                                					
-                                    					
-                                					$("#chart").kendoChart({
-                                				        theme: $(document).data("kendoSkin") || "default",
+<script>
+	function exportPDF(e){
+		document.location.href='customer.webapp/PDF_File';
+	}
 
-                                				        dataSource: {
-                                				            data: energyData
-                                				        },
-                                				        title: {
-                                				            text: servname + "'s Energy Consumption January-November(kWh)"
-                                				        },
-                                				        legend: {
-                                				            position: "bottom"
-                                				        },
-                                				        seriesDefaults: {
-                                				        	type: "column",
-                                				        },
-                                				        series: [{
-                                				        	type: "column",
-                                				            field: "kWh",
-                                				            name: "Energy Consumed"
-                                				        }],
-                                				        valueAxis: {
-                                				        	max: 700,
-                                				        	majorUnit: 100,
-                                				            labels: {
-                                				                format: "{0}kWh"
-                                				            },
-                                				        },
-                                				        
-                                				        categoryAxis: {
-                                				            field: "month"
-                                				        }
-                                				    });
-                                				}
-                                				$(document).ready(function (){;
-                                				$("#chartContainer").show();
-                                				});
+	function exportExcel(e){
+			document.location.href='customer.webapp/ExcelFile'; //servlet url
+		}      						
+	
+							
+	function createChart(e){
+		
+		var tr = $(e.target).closest("tr"); // get the current table row (tr)
+          
+        var data = this.dataItem(tr);	// get the data bound to the current table row
+        var servname = data.firstName + " " + data.lastName;
+      
+		var energyData = [{
+			"month":"January",
+			"kWh" : Math.floor(Math.random() * (700-300)) + 300
+		},
+		{
+			"month": "February",
+			"kWh" : Math.floor(Math.random() * (700-300)) + 300
+		},
+		{
+			"month": "March",
+			"kWh": Math.floor(Math.random() * (700-300)) + 300
+		},
+		{
+			"month": "April", 
+			"kWh": Math.floor(Math.random() * (700-300)) + 300
+		},
+		{
+			"month": "May",
+			"kWh": Math.floor(Math.random() * (700-300)) + 300
+		}, 
+		{
+			"month": "June", 
+			"kWh": Math.floor(Math.random() * (700-300)) + 300
+		},
+		{
+			"month": "July",
+			"kWh": Math.floor(Math.random() * (700-300)) + 300
+		},
+		{
+			"month": "August",
+			"kWh": Math.floor(Math.random() * (700-300)) + 300
+		},
+		{
+			"month": "September",
+			"kWh": Math.floor(Math.random() * (700-300)) + 300
+		},
+		{
+			"month":"October", 
+			"kWh": Math.floor(Math.random() * (700-300)) + 300
+		},
+		{
+			"month":"November",
+			"kWh": Math.floor(Math.random() * (700-300)) + 300
+		}];
+		
+		
+    		
+		$("#chart").kendoChart({
+	        theme: $(document).data("kendoSkin") || "default",
+
+	        dataSource: {
+	            data: energyData
+	        },
+	        title: {
+	            text: servname + "'s Energy Consumption January-November(kWh)"
+	        },
+	        legend: {
+	            position: "bottom"
+	        },
+	        seriesDefaults: {
+	        	type: "column",
+	        },
+	        series: [{
+	        	type: "column",
+	            field: "kWh",
+	            name: "Energy Consumed"
+	        }],
+	        valueAxis: {
+	        	max: 700,
+	        	majorUnit: 100,
+	            labels: {
+	                format: "{0}kWh"
+	            },
+	        },
+	        
+	        categoryAxis: {
+	            field: "month"
+	        }
+	    });
+	}
+	$(document).ready(function (){;
+	$("#chartContainer").show();
+	});
                                 				
                                 				
-                                			</script>
+</script>
 <div class="container">
         <h3 align="center">Customers</h3>
         <kendo:grid name="customers" pageable="true" filterable="true">
